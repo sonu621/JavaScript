@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JavaScript</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop1"
+                    src="https://plus.unsplash.com/premium_photo-1761210594096-38d74e09cd26?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=736"
+                    alt="photoshop">
+            </li>
+            <li>
+                <img width="200px" id="photoshop2"
+                    src="https://plus.unsplash.com/premium_photo-1724769304929-4d18cbef6c77?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                    alt="photoshop">
+            </li>
+            <li>
+                <img width="200px" id="photoshop3"
+                    src="https://plus.unsplash.com/premium_photo-1721762724276-e94434947b1d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1083"
+                    alt="photoshop">
+            </li>
+            <li>
+                <img width="200px" id="photoshop4"
+                    src="https://plus.unsplash.com/premium_photo-1684445034763-013f0525c40c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                    alt="photoshop">
+            </li>
+            <li><a href="http://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    // document.getElementById('photoshop1').onclick = function(){
+    //     alert('You clicked on image 1')
+    // }
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, scrrenX, screenY
+    // altKer, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('photoshop1').addEventListener('click', function (e) {
+    //     alert('You clicked on image 1')
+    //     console.log(e);
+    // }, false);
+
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log('Images section');
+    // })
+
+    // document.getElementById('photoshop1') / addEventListener('click', function (e) {
+    //     console.log('Photoshop1 Click');
+    //     e.stopPropagation()
+    // })
+
+    // document.getElementById('google').addEventListener('click', function (e) {
+    //     e.preventDefault()
+    //     e.preventDefault()
+    //     console.log('Google clicked');
+    // })
+
+    document.querySelector('#images').addEventListener ('click', function(e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removIt = e.target.parentNode
+        // removeIt.remove()
+        removIt.parentNode.removeChild(removIt);
+        }
+        
+    })
+
+</script>
+
+</html>

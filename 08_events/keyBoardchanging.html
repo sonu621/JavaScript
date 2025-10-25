@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Changing</title>
+    <style>
+        .project {
+            background-color: black;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project">
+        <div id="insert">
+            <div class="key">
+                Press any key to watch the magic ✨
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const insert = document.getElementById('insert');
+
+        window.addEventListener('keydown', (e) => {
+            insert.innerHTML = `
+                <div class="color">
+                    <table>
+                        <tr>
+                            <th>Key</th>
+                            <th>Key Code</th>
+                            <th>Code</th>
+                        </tr>
+                        <tr>
+                            <td>${e.key === ' ' ? 'Space' : e.key}</td>
+                            <td>${e.keyCode}</td>
+                            <td>${e.code}</td>
+                        </tr>
+                    </table>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
