@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind in JavaScript</title>
+</head>
+
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class Button {
+        constructor() {
+            this.libaryName = "JavaScript";
+            this.serverNmae = "htttps://localhost:3000"
+
+            document.querySelector('button').addEventListener('click', this.handleClick.bind(this));
+        }
+        handleClick() {
+            console.log('Button Clicked');
+            console.log(this.serverNmae)
+        }
+    }
+
+    const app = new Button()
+</script>
+
+</html>
